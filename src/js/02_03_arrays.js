@@ -326,3 +326,14 @@
 
 // console.table(cardsOffTrello);
 
+// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+
+// const firstTwoEls = fruits.slice(0, 2);
+
+// console.log(firstTwoEls);
+
+// const nonExtremeEls = fruits.slice(1, 4);
+// console.log(nonExtremeEls);
+
+// const lastThreeEls = fruits.slice(2);
+// console.log(lastThreeEls);
