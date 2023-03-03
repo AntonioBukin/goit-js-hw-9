@@ -349,3 +349,382 @@
 // }, {});
 
 // console.log(tagsStat);
+
+/*-------------------------------------------------------------*/
+
+//Метод sort()/array.prototype.sort()
+//змінює орігінальний масив, сортує в бік збільшення,
+//приведення значень до рядка а далі сортує по Unicode
+
+// 1) Сотрування
+// const scores = [61, 19, 74, 35, 92, 56];
+// scores.sort();
+// console.log('scores', scores); //[19, 35, 56, 61, 74, 92];
+
+// const letters = ['b', 'B', 'a', 'A', 'c', 'C'];
+// letters.sort();
+// console.log(letters); // ['A', 'B', 'C', 'a', 'b', 'c']
+
+// 2) compareFunction - ф-ція порівняння (callback);
+
+// const scores = [61, 19, 74, 35, 92, 56];
+
+// scores.sort((curEl, nexEl) => {
+//   return curEl - nexEl; //сотрує від меньшого к більшому
+//   //return nexEl - curEl; //сотрує від більшого к меньшому
+// }); // curEl - поточний елемент, nexEl - сусідний з права ел
+
+// console.log(scores);
+
+// 3) Зробити копію масива, щоб не сортувати оригінальний
+// Завдяки операції ...spread + sort
+
+// const scores = [61, 19, 74, 35, 92, 56];
+
+// const copyOfScore = [...scores]; //розпилили в новий масив
+// copyOfScore.sort(); //відсортували
+
+//console.log('copyOfScore', copyOfScore); //[19, 35, 56, 61, 74, 92]
+
+//Більш короткий синтаксис
+
+// const newSortedNumbers = [...scores].sort();
+// console.log('newSortedNumbers', newSortedNumbers);
+
+//Якщо ми хочемо відсортувати наш масив масив від меньшого до більшого і навпаки
+// const scores = [61, 19, 74, 35, 92, 56, 62, 4];
+// const moreLessSortedNumbers = [...scores].sort((a, b) => b - a);
+
+// const lessMoreSortedNumbers = [...scores].sort((a, b) => a - b);
+
+// console.log('moreLessSortedNumbers', moreLessSortedNumbers); //від більшого до меньшого
+// console.log('lessMoreSortedNumbers', lessMoreSortedNumbers); //від меньшого до більшого
+// console.log('scores', scores); //незмінний
+
+// 4) Зробити копію масива, щоб не сортувати оригінальний
+
+// const players = [
+//   { name: 'Манго', timePlayed: 83, id: '016' },
+//   { name: 'Полі', timePlayed: 159, id: '021' },
+//   { name: 'Аякс', timePlayed: 137, id: '036' },
+//   { name: 'Ківі', timePlayed: 194, id: '004' },
+//   { name: "Х'юстон", timePlayed: 174, id: '005' },
+// ];
+
+// 4.1 відсортувати по ігровому часу (від меньшого до більшого)
+
+// const sortedByMorePlayers = [...players].sort((prevPlayers, nextPlayers) => {
+//   return prevPlayers.timePlayed - nextPlayers.timePlayed;
+// });
+
+// console.table(sortedByMorePlayers);
+
+// 4.2 відсортувати по ігровому часу (від більшого до меньшого)
+
+// const sortedByLessPlayers = [...players].sort((prevPlayers, nextPlayers) => {
+//   return nextPlayers.timePlayed - prevPlayers.timePlayed;
+// });
+
+// console.table(sortedByLessPlayers);
+
+// 4.3 відсортувати по іd (від більшого до меньшого)
+
+// const sotredByBigId = [...players].sort((prevId, nextId) => {
+//   return nextId.id - prevId.id;
+// });
+
+// console.table(sotredByBigId);
+
+/*-------------------------------------------------------------*/
+
+//Метод flat()/array.prototype.flat()
+//«розглажує масив до вказанної глибини»
+//за замовчування глибина 1
+
+// const scores = [61, 19, [74, [35]], [92, [55, 18]], 56];
+
+// console.log(scores.flat(3)); //можна розгладити многомірний масив
+
+/*-------------------------------------------------------------*/
+
+//Метод flatMap()/array.prototype.flatMap()
+
+// 1) Зібрати всі теги з твітов в один масив за допомогою flatMap()
+
+// const tweets = [
+//   { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+//   { id: '001', likes: 2, tags: ['html', 'css'] },
+//   { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+//   { id: '003', likes: 8, tags: ['css', 'react'] },
+//   { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+// ];
+
+// const allTags = tweets.flatMap(tweet => tweet.tags);
+// console.log(allTags); //отримали один масив з тегами
+
+/*-------------------------------------------------------------*/
+
+//Ланцюжки викликів - chaining
+
+// const scores = [61, 19, 56, 14, 15, 89];
+
+// 1) Отримати числа більше 35
+
+//const moreThenTwo = scores.filter(score => score > 35);
+// console.log(moreThenTwo);
+
+// 2) Помножити на 3 числа в масиві, які більше 35
+
+// const muitByThree = moreThenTwo.map(score => score * 3);
+// console.log(muitByThree);
+
+// 3) Відсортувати від меньшого до більшого значення з 2-го завдання
+
+// const sorted = muitByThree.sort((a, b) => a - b);
+// console.log(sorted);
+
+//Ланцюжок 3 дій в одну (чейнинг)
+
+// const sorted = scores
+//   .filter(score => score > 35)
+//   .map(score => score * 3)
+//   .sort((a, b) => a - b);
+
+// console.log(sorted);
+
+// Example 7
+// Відстортувати студентів хто он-лайн по рангу
+// спочатку фільтруємо потім сортуємо
+
+// const students = [
+//   { name: 'Манго', rank: 183, id: '016', online: false },
+//   { name: 'Полі', rank: 159, id: '021', online: true },
+//   { name: 'Аякс', rank: 137, id: '036', online: false },
+//   { name: 'Ківі', rank: 194, id: '004', online: true },
+//   { name: "Х'юстон", rank: 174, id: '005', online: true },
+// ];
+
+// const onLineStudentsAndSorted = students
+//   .filter(student => student.online)
+//   .sort((studentA, studentB) => studentA.rank - studentB.rank);
+
+// console.table(onLineStudentsAndSorted);
+
+//Example 8
+//Функция changeEven(numbers, value) принимает массив чисел numbers и обновляет каждый элемент,
+//значение которого это чётное число, добавляя к нему значение параметра value.
+//Выполни рефакторинг функции так, чтобы она стала чистой - не изменяла массив чисел numbers,
+//а создавала, наполняла и возвращала новый массив с обновлёнными значениями.
+
+// function changeEven(numbers, value) {
+//   // Change code below this line
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       numbers[i] = numbers[i] + value;
+//     }
+//   }
+//   // Change code above this line
+// }
+
+// const changeEven = (numbers, value) => альтернативний запис умови (581 строці)
+// function changeEven(numbers, value) {
+//   const NumbersArray = [];
+
+//   numbers.forEach(element => {
+//     //console.log(element);
+//     //console.log(value);
+
+//     if (element % 2 === 0) {
+//       //console.log(element);
+//       NumbersArray.push(element + value);
+//     } else {
+//       !element % 2 === 0;
+//       NumbersArray.push(element);
+//     }
+//   });
+
+//   return NumbersArray;
+// }
+
+// console.log(changeEven([1, 2, 3, 4, 5], 10)); //[1, 12, 3, 14, 5]
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10)); //[12, 18, 3, 7, 14, 16]
+// console.log(changeEven([17, 24, 68, 31, 42], 100)); //[17, 124, 168, 31, 142]
+// console.log(changeEven([44, 13, 81, 92, 36, 54], 100)); //[1, 12, 3, 14, 5]
+// console.log(changeEven([1, 2, 3, 4, 5], 10)); //[144, 13, 81, 192, 136, 154]
+
+//Example 9
+// Дополни код так, чтобы в переменной planetsLengths получился массив длин названий планет.
+// Обязательно используй метод map().
+// const planets = ['Earth', 'Mars', 'Venus', 'Jupiter'];
+
+// const planetsLengths = planets.map(planet => planet.length);
+
+// console.log(planets);
+// console.log(planetsLengths);
+
+//Example 10
+//Используя метод map() сделай так, чтобы в переменной titles
+//получился массив названий книг(свойство title) из всех объектов массива books.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+// ];
+
+// const titles = books.map(book => book.title);
+
+// console.log(titles); //["The Last Kingdom", "Beside Still Waters", "The Dream of a Ridiculous Man", "Redder Than Blood", "Enemy of God"]
+
+//Example 11
+//Используя метод flatMap() сделай так, чтобы в переменной genres
+//получился массив всех жанров книг(свойство genres)
+//из массива книг books.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     genres: ['adventure', 'history'],
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     genres: ['fiction'],
+//   },
+//   {
+//     title: 'Redder Than Blood',
+//     author: 'Tanith Lee',
+//     genres: ['horror', 'mysticism'],
+//   },
+// ];
+
+// const genres = books.flatMap(book => book.genres);
+
+// console.log(genres);
+
+//Example 12
+//Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name)
+//из массива объектов в параметре users.
+
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ['ipsum', 'lorem'],
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ['adipisicing', 'irure', 'velit'],
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ['ex', 'culpa', 'nostrud'],
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ['lorem', 'veniam', 'culpa'],
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
+
+// const getUserNames = users.map(user => user.name);
+// console.log(getUserNames);
+
+// const getUserNames = users => {
+//   const NewUserName = users.map(user => user.name);
+
+//   return NewUserName;
+// };
+
+//Example 13
+//Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email)
+//из массива объектов в параметре users.
+
+// const getUserEmails = users => {
+//   const NewUserEmail = users.map(user => user.email);
+
+//   return NewUserEmail;
+// };
+
+//Example 14
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter(number => number % 2 === 0);
+// const oddNumbers = numbers.filter(number => number % 2 != 0);
+
+// console.log(evenNumbers);
+// console.log(oddNumbers);
