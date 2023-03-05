@@ -728,3 +728,145 @@
 
 // console.log(evenNumbers);
 // console.log(oddNumbers);
+
+//Example 15
+//Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books,
+//а в переменной uniqueGenres массив уникальных жанров - без повторений.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     genres: ['adventure', 'history'],
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     genres: ['fiction', 'mysticism'],
+//   },
+//   {
+//     title: 'Redder Than Blood',
+//     author: 'Tanith Lee',
+//     genres: ['horror', 'mysticism', 'adventure'],
+//   },
+// ];
+
+// const allGenres = books.flatMap(book => book.genres);
+// const uniqueGenres = allGenres.filter(
+//   (genres, index, array) => array.indexOf(genres) === index
+// );
+
+// console.log(allGenres);
+// console.log(uniqueGenres);
+
+//Example 16
+//Используя метод filter() дополни код так, чтобы:
+//В переменной topRatedBooks получился массив книг рейтинг которых (свойство rating)
+//больше либо равно значению переменной MIN_RATING.
+//В переменной booksByAuthor получился массив книг написанных автором с именем (свойство author)
+//которое совпадает со значением в переменной AUTHOR.
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//   { title: 'Enemy of God', author: 'Bernard Cornwell', rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = 'Bernard Cornwell';
+// // Change code below this line
+
+// const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter(book => book.author === AUTHOR);
+
+// console.log(topRatedBooks);
+// console.log(booksByAuthor);
+
+//Example 17
+//Дополни функцию getUsersWithEyeColor(users, color) так, чтобы она возвращала массив пользователей
+//у которых цвет глаз(свойство eyeColor) совпадает со значением параметра color.
+
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//   },
+// ];
+
+// const getUsersWithEyeColor = (users, color) =>
+//   users.filter(user => user.eyeColor === color);
+
+// console.table(getUsersWithEyeColor(users, 'blue'));
