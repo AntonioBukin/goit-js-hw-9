@@ -1032,8 +1032,31 @@ const users = [
   },
 ];
 
-const getUsersWithFriend = (users, friendName) =>
-  users.filter(user => user.friends.includes(friendName));
+// const getUsersWithFriend = (users, friendName) =>
+//   users.filter(user => user.friends.includes(friendName));
 
-console.log(getUsersWithFriend(users, 'Briana Decker')); //[ 'Sharlene Bush', 'Sheree Anthony' ]
-console.log(getUsersWithFriend(users, 'Goldie Gentry')); //[ 'Elma Head', 'Sheree Anthony' ]
+// console.log(getUsersWithFriend(users, 'Briana Decker')); //[ 'Sharlene Bush', 'Sheree Anthony' ]
+// console.log(getUsersWithFriend(users, 'Goldie Gentry')); //[ 'Elma Head', 'Sheree Anthony' ]
+
+//Example 20
+//Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends).
+//У нескольких пользователей могут быть одинаковые друзья,
+//сделай так чтобы возвращаемый массив не содержал повторений.
+
+// const getFriends = users => {
+//   const allFriends = users.flatMap(user => user.friends);
+
+//   const uniqueFriends = allFriends.filter(
+//     (friend, index, array) => array.indexOf(friend) === index
+//   );
+
+//   return uniqueFriends;
+// };
+
+// console.log(getFriends(users));
+
+//Example 21
+//Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей,
+//значение свойства isActive которых true.
+
+//const getActiveUsers = users => ;
