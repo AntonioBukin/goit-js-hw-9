@@ -491,6 +491,7 @@
 //   .sort((a, b) => a - b);
 
 // console.log(sorted);
+/*---------------------------------------------------------------*/
 
 // Example 7
 // Відстортувати студентів хто он-лайн по рангу
@@ -509,6 +510,7 @@
 //   .sort((studentA, studentB) => studentA.rank - studentB.rank);
 
 // console.table(onLineStudentsAndSorted);
+/*---------------------------------------------------------------*/
 
 //Example 8
 //Функция changeEven(numbers, value) принимает массив чисел numbers и обновляет каждый элемент,
@@ -551,6 +553,7 @@
 // console.log(changeEven([17, 24, 68, 31, 42], 100)); //[17, 124, 168, 31, 142]
 // console.log(changeEven([44, 13, 81, 92, 36, 54], 100)); //[1, 12, 3, 14, 5]
 // console.log(changeEven([1, 2, 3, 4, 5], 10)); //[144, 13, 81, 192, 136, 154]
+/*---------------------------------------------------------------*/
 
 //Example 9
 // Дополни код так, чтобы в переменной planetsLengths получился массив длин названий планет.
@@ -561,6 +564,7 @@
 
 // console.log(planets);
 // console.log(planetsLengths);
+/*---------------------------------------------------------------*/
 
 //Example 10
 //Используя метод map() сделай так, чтобы в переменной titles
@@ -589,6 +593,7 @@
 // const titles = books.map(book => book.title);
 
 // console.log(titles); //["The Last Kingdom", "Beside Still Waters", "The Dream of a Ridiculous Man", "Redder Than Blood", "Enemy of God"]
+/*---------------------------------------------------------------*/
 
 //Example 11
 //Используя метод flatMap() сделай так, чтобы в переменной genres
@@ -616,6 +621,7 @@
 // const genres = books.flatMap(book => book.genres);
 
 // console.log(genres);
+/*---------------------------------------------------------------*/
 
 //Example 12
 //Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name)
@@ -709,6 +715,7 @@
 
 //   return NewUserName;
 // };
+/*---------------------------------------------------------------*/
 
 //Example 13
 //Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email)
@@ -719,6 +726,7 @@
 
 //   return NewUserEmail;
 // };
+/*---------------------------------------------------------------*/
 
 //Example 14
 // const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
@@ -728,6 +736,7 @@
 
 // console.log(evenNumbers);
 // console.log(oddNumbers);
+/*---------------------------------------------------------------*/
 
 //Example 15
 //Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books,
@@ -758,6 +767,7 @@
 
 // console.log(allGenres);
 // console.log(uniqueGenres);
+/*---------------------------------------------------------------*/
 
 //Example 16
 //Используя метод filter() дополни код так, чтобы:
@@ -795,6 +805,7 @@
 
 // console.log(topRatedBooks);
 // console.log(booksByAuthor);
+/*---------------------------------------------------------------*/
 
 //Example 17
 //Дополни функцию getUsersWithEyeColor(users, color) так, чтобы она возвращала массив пользователей
@@ -870,6 +881,7 @@
 //   users.filter(user => user.eyeColor === color);
 
 // console.table(getUsersWithEyeColor(users, 'blue'));
+/*---------------------------------------------------------------*/
 
 //Example 18
 //Дополни функцию getUsersWithAge(users, minAge, maxAge) так, чтобы она возвращала массив пользователей,
@@ -953,90 +965,92 @@
 
 //console.log(getUsersWithAge(users, 20, 30));
 //console.log(getUsersWithAge(users, 30, 40));
+/*---------------------------------------------------------------*/
 
 //Example 19
 //Дополни функцию getUsersWithFriend(users, friendName) так,
 //чтобы она возвращала массив пользователей у которых есть друг с именем в параметре friendName.
 //Массив друзей пользователя хранится в свойстве friends.
 
-const users = [
-  {
-    name: 'Moore Hensley',
-    email: 'moorehensley@indexia.com',
-    eyeColor: 'blue',
-    friends: ['Sharron Pace'],
-    isActive: false,
-    balance: 2811,
-    gender: 'male',
-    age: 37,
-  },
-  {
-    name: 'Sharlene Bush',
-    email: 'sharlenebush@tubesys.com',
-    eyeColor: 'blue',
-    friends: ['Briana Decker', 'Sharron Pace'],
-    isActive: true,
-    balance: 3821,
-    gender: 'female',
-    age: 34,
-  },
-  {
-    name: 'Ross Vazquez',
-    email: 'rossvazquez@xinware.com',
-    eyeColor: 'green',
-    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
-    isActive: false,
-    balance: 3793,
-    gender: 'male',
-    age: 24,
-  },
-  {
-    name: 'Elma Head',
-    email: 'elmahead@omatom.com',
-    eyeColor: 'green',
-    friends: ['Goldie Gentry', 'Aisha Tran'],
-    isActive: true,
-    balance: 2278,
-    gender: 'female',
-    age: 21,
-  },
-  {
-    name: 'Carey Barr',
-    email: 'careybarr@nurali.com',
-    eyeColor: 'blue',
-    friends: ['Jordan Sampson', 'Eddie Strong'],
-    isActive: true,
-    balance: 3951,
-    gender: 'male',
-    age: 27,
-  },
-  {
-    name: 'Blackburn Dotson',
-    email: 'blackburndotson@furnigeer.com',
-    eyeColor: 'brown',
-    friends: ['Jacklyn Lucas', 'Linda Chapman'],
-    isActive: false,
-    balance: 1498,
-    gender: 'male',
-    age: 38,
-  },
-  {
-    name: 'Sheree Anthony',
-    email: 'shereeanthony@kog.com',
-    eyeColor: 'brown',
-    friends: ['Goldie Gentry', 'Briana Decker'],
-    isActive: true,
-    balance: 2764,
-    gender: 'female',
-    age: 39,
-  },
-];
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
 
 // const getUsersWithFriend = (users, friendName) =>
 //   users.filter(user => user.friends.includes(friendName));
 
 // console.log(getUsersWithFriend(users, 'Briana Decker')); //[ 'Sharlene Bush', 'Sheree Anthony' ]
 // console.log(getUsersWithFriend(users, 'Goldie Gentry')); //[ 'Elma Head', 'Sheree Anthony' ]
+/*---------------------------------------------------------------*/
 
 //Example 20
 //Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends).
@@ -1059,4 +1073,18 @@ const users = [
 //Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей,
 //значение свойства isActive которых true.
 
-//const getActiveUsers = users => ;
+//const getActiveUsers = users => users.filter(user => user.isActive);
+
+// console.log(getActiveUsers(users));
+/*---------------------------------------------------------------*/
+
+//Example 22
+//Дополни функцию getInactiveUsers(users) так, чтобы она возвращала массив неактивных пользователей,
+//значение свойства isActive которых false.
+
+// const getInactiveUsers = users => users.filter(user => !user.isActive);
+
+// console.log(getInactiveUsers(users));
+/*---------------------------------------------------------------*/
+
+//Example 23
