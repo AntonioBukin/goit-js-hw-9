@@ -1301,3 +1301,39 @@ const users = [
 // const isEveryUserActive = users => users.every(user => user.isActive);
 
 // console.log(isEveryUserActive(users)); //false
+/*---------------------------------------------------------------*/
+
+//Example 27
+//Используя метод some() дополни код так, чтобы:
+//В переменной anyElementInFirstIsEven был результат проверки наличия чётных элементов в массиве firstArray.
+//В переменной anyElementInFirstIsOdd был результат проверки наличия нечётных элементов в массиве firstArray.
+//В переменной anyElementInSecondIsEven был результат проверки наличия чётных элементов в массиве secondArray.
+//В переменной anyElementInSecondIsOdd был результат проверки наличия нечётных элементов в массиве secondArray.
+//В переменной anyElementInThirdIsEven был результат проверки наличия чётных элементов в массиве thirdArray.
+//В переменной anyElementInThirdIsOdd был результат проверки наличия нечётных элементов в массиве thirdArray.
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Change below this line
+
+// const anyElementInFirstIsEven = firstArray.some(el => el % 2 === 0);
+// //console.log(anyElementInFirstIsEven);
+// const anyElementInFirstIsOdd = firstArray.some(el => el % 2 != 0);
+
+// const anyElementInSecondIsEven = secondArray.some(el => el % 2 === 0);
+// //console.log(anyElementInSecondIsEven);
+// const anyElementInSecondIsOdd = secondArray.some(el => el % 2 != 0);
+
+// const anyElementInThirdIsEven = thirdArray.some(el => el % 2 === 0);
+// const anyElementInThirdIsOdd = thirdArray.some(el => el % 2 != 0);
+// //console.log(anyElementInThirdIsOdd);
+/*---------------------------------------------------------------*/
+
+//Example 28
+//Дополни функцию isAnyUserActive(users) так, чтобы она проверяла наличие активных пользователей
+//(свойство isActive) и возвращала true или false.
+
+// const isAnyUserActive = users => users.some(user => user.isActive);
+
+// console.log(isAnyUserActive(users)); //true
