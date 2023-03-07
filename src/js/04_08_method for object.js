@@ -1470,3 +1470,21 @@
 /*---------------------------------------------------------------*/
 
 //Example 33
+//Дополни код так, чтобы в переменной ascendingReleaseDates получилась
+//отсортированная по возрастанию копия массива releaseDates,
+//а в переменной alphabeticalAuthors копия массива имён авторов authors отсортированная в по алфавиту.
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   'Tanith Lee',
+//   'Bernard Cornwell',
+//   'Robert Sheckley',
+//   'Fyodor Dostoevsky',
+// ];
+// // Change code below this line
+
+// const ascendingReleaseDates = [...releaseDates].sort();
+// //console.log(ascendingReleaseDates); //[1967, 1973, 1984, 1997, 2008, 2012, 2016]
+
+// const alphabeticalAuthors = [...authors].sort();
+// console.log(alphabeticalAuthors); //["Bernard Cornwell", "Tanith Lee", "Robert Sheckley", "Fyodor Dostoevsky"]
