@@ -1374,4 +1374,9 @@ const players = [
 ];
 // Change code below this line
 
-const totalAveragePlaytimePerGame = players;
+const totalAveragePlaytimePerGame = players.reduce(
+  (acc, player) => acc + player.playtime / player.gamesPlayed,
+  0
+);
+
+console.log(totalAveragePlaytimePerGame); //1023
