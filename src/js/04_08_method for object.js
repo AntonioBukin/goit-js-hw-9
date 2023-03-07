@@ -1793,4 +1793,10 @@ const users = [
 //Дополни функцию getSortedFriends(users) так, чтобы она возвращала массив
 //уникальных имён друзей(свойство friends) отсортированный по алфавиту.
 
-//const getSortedFriends = users => ;
+// const getSortedFriends = users =>
+//   [...users]
+//     .flatMap(user => user.friends)
+//     .filter((friend, index, array) => array.indexOf(friend) === index)
+//     .sort((a, b) => a.localeCompare(b));
+
+//console.log(getSortedFriends(users)); //["Adrian Cross", "Aisha Tran", "Briana Decker", "Eddie Strong", "Goldie Gentry", "Jacklyn Lucas", "Jordan Sampson", "Linda Chapman", "Marilyn Mcintosh", "Naomi Buckner", "Padilla Garrison", "Sharron Pace", "Solomon Fokes"]
