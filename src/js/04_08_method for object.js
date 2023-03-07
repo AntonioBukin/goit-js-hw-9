@@ -1512,14 +1512,16 @@
 //в переменной authorsInAlphabetOrder получилась отсортированная по алфавиту копия массива authors,
 //а в переменной authorsInReversedOrder копия отсортированная в обратном алфавитном порядке.
 
-const authors = [
-  'Tanith Lee',
-  'Bernard Cornwell',
-  'Robert Sheckley',
-  'Fyodor Dostoevsky',
-  'Howard Lovecraft',
-];
+// const authors = [
+//   'Tanith Lee',
+//   'Bernard Cornwell',
+//   'Robert Sheckley',
+//   'Fyodor Dostoevsky',
+//   'Howard Lovecraft',
+// ];
 
-const authorsInAlphabetOrder = authors;
+//const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b));
+//console.log(authorsInAlphabetOrder); //["Bernard Cornwell", "Fyodor Dostoevsky", "Howard Lovecraft", "Robert Sheckley", "Tanith Lee"]
 
-const authorsInReversedOrder = authors;
+//const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a));
+//console.log(authorsInReversedOrder); //["Tanith Lee", "Robert Sheckley", "Howard Lovecraft", "Fyodor Dostoevsky", "Bernard Cornwell"]
