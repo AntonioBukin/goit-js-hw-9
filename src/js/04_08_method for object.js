@@ -1337,3 +1337,41 @@ const users = [
 // const isAnyUserActive = users => users.some(user => user.isActive);
 
 // console.log(isAnyUserActive(users)); //true
+/*---------------------------------------------------------------*/
+
+//Example 29
+//Игровому сервису необходим функционал подсчёта среднего времени проведённого в играх.
+//Дополни код так, чтобы в переменной totalPlayTime
+//получилось общее игровое время из массива playtimes.
+
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// // Change code below this line
+
+// const totalPlayTime = playtimes.reduce((acc, number) => acc + number, 0);
+// //console.log(totalPlayTime); //2692
+
+// // Change code above this line
+// const averagePlayTime = totalPlayTime / playtimes.length;
+// console.log(averagePlayTime); //673
+/*---------------------------------------------------------------*/
+
+//Example 30
+//Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока,
+//и получить общую сумму этих времён.Рассчитать время для каждого из игроков,
+//можно разделив его время(свойство playtime) на количество игр(свойство gamesPlayed).
+
+const players = [
+  { name: 'Mango', playtime: 1270, gamesPlayed: 4 },
+  { name: 'Poly', playtime: 469, gamesPlayed: 2 },
+  { name: 'Ajax', playtime: 690, gamesPlayed: 3 },
+  { name: 'Kiwi', playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+const totalAveragePlaytimePerGame = players;
