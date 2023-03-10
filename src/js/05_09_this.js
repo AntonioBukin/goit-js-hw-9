@@ -138,3 +138,46 @@
 // console.log(chopShop.calcTotalPrice('Diamond')); // 8100
 // console.log(chopShop.calcTotalPrice('Sapphire')); // 9800
 // console.log(chopShop.calcTotalPrice('Ruby')); // 1600
+/*---------------------------------------------------------------*/
+
+//Example 7
+//Виконайте рефакторинг методів об'єкту phonebook щоб код запрацював.
+
+// const phonebook = {
+//   contacts: [],
+//   add(contact) {
+//     //! this в середені методу add буде phonebook
+//     const newContact = {
+//       list: 'default',
+//       ...contact,
+//       id: this.generateId(),
+//       createdAt: this.getDate(),
+//     };
+//       this.contacts.push(newContact);
+
+//     return this.contacts;
+//   },
+//   generateId() {
+//     return '_' + Math.random().toString(36).substr(2, 9);
+//   },
+//   getDate() {
+//     return Date.now();
+//   },
+// };
+
+// console.log(
+//   phonebook.add({
+//     name: 'Mango',
+//     email: 'mango@mail.com',
+//     list: 'friends',
+//   })
+// );
+// console.log(
+//   phonebook.add({
+//     name: 'Poly',
+//     email: 'poly@hotmail.com',
+//   })
+// );
+/*---------------------------------------------------------------*/
+
+//Example 8
