@@ -181,3 +181,30 @@
 /*---------------------------------------------------------------*/
 
 //Example 8
+//* Створіть об'єкт calculator з трьома методами:
+
+//? read(a, b)- приймає два значення та зберігає їх як властивості об'єкта.
+//? add() - повертає суму збережених значень.
+//? mult() - перемножує збережені значення та повертає результат.
+
+// const calculator = {
+//   a: 0,
+//   b: 0,
+//   read(a, b) {
+//     this.a = a;
+//     this.b = b;
+//   },
+//   add() {
+//     return this.a + this.b;
+//   },
+
+//   mult() {
+//     return this.a * this.b;
+//   },
+// };
+
+// calculator.read(5, 10);
+// console.log(calculator);
+
+// console.log(calculator.add()); //15
+// console.log(calculator.mult()); //50
