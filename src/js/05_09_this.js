@@ -441,3 +441,26 @@
 /*---------------------------------------------------------------*/
 
 //Example 16
+//Выполни рефакторинг класса Car так, чтобы он принимал один параметр
+//- объект со свойсвами brand, model и price.
+//Деструктуризируй объект в сигнатуре(подписи) конструктора.
+
+// class Car {
+//   // Change code below this line
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+
+// const auto = new Car({
+//   brand: 'brand',
+//   model: 'model',
+//   price: 'price',
+// });
+
+// console.log(new Car({ brand: 'Audi', model: 'Q3', price: 36000 })); //{ brand: "Audi", model: "Q3", price: 36000 }
+// console.log(new Car({ brand: 'BMW', model: 'X5', price: 58900 })); //{ brand: "BMW", model: "X5", price: 58900 }
+// console.log(new Car({ brand: 'Nissan', model: 'Murano', price: 31700 })); //{ brand: "Nissan", model: "Murano", price: 31700 }
