@@ -309,3 +309,62 @@
 // customer.addOrder(5000, 'Steak');
 // console.log(customer.getBalance()); // 19750
 // console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+/*---------------------------------------------------------------*/
+
+//Example 11
+//Тестировщики нашли баги в коде сервиса хранения истории заказов еды.
+//Тебе необходимо исправить их, правильно расставив this в методах объекта historyService,
+//чтобы методы начали работать правильно.
+
+// const historyService = {
+//   orders: [
+//     { email: 'jacob@hotmail.com', dish: 'Burrito' },
+//     { email: 'solomon@topmail.net', dish: 'Burger' },
+//     { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//     { email: 'solomon@topmail.net', dish: 'Apple pie' },
+//     { email: 'jacob@hotmail.com', dish: 'Taco' },
+//   ],
+//   // Change code below this line
+//   getOrdersLog() {
+//     return this.orders
+//       .map(order => `email: ${order.email} dish: ${order.dish}`)
+//       .join(' - ');
+//   },
+//   getEmails() {
+//     const emails = this.orders.map(order => order.email);
+//     const uniqueEmails = new Set(emails);
+//     return [...uniqueEmails];
+//   },
+//   getOrdersByEmail(email) {
+//     return this.orders.filter(order => order.email === email);
+//   },
+//   // Change code above this line
+// };
+
+// console.log(historyService.getOrdersByEmail('solomon@topmail.net')); //[{ email: "solomon@topmail.net", dish: "Burger" }, { email: "solomon@topmail.net", dish: "Apple pie" }]
+// console.log(historyService.getOrdersByEmail('artemis@coldmail.net')); //[{ email: "artemis@coldmail.net", dish: "Pizza" }]
+/*---------------------------------------------------------------*/
+
+//Example 12
+//Измени код так, чтобы объект parent стал прототипом для объекта в переменной сhild.
+
+// const parent = {
+//   name: 'Stacey',
+//   surname: 'Moore',
+//   age: 54,
+//   heritage: 'Irish',
+// };
+// // Change code below this line
+
+// const child = Object.create(parent);
+
+// // Change code above this line
+// child.name = 'Jason';
+// child.age = 27;
+
+// console.log(parent.hasOwnProperty('surname')); //true;
+// console.log(parent.hasOwnProperty('heritage')); //true;
+// console.log(child.hasOwnProperty('name')); //true
+// console.log(child.hasOwnProperty('age')); //true
+// console.log(child.hasOwnProperty('heritage')); //false
+// console.log(parent.isPrototypeOf(child)); //true
