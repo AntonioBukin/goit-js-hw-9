@@ -488,3 +488,40 @@
 //   }
 // }
 /*---------------------------------------------------------------*/
+//Example 18
+//Напиши класс Storage, который будет создавать объекты для управления складом товаров.
+//Класс ожидает только один аргумент - начальный массив товаров, который записывается на создаваемый объект в свойство items.
+//!Объяви следующие методы класса:
+// !getItems() - возвращает массив текущих товаров в свойстве items объекта который вызывает этот метод.
+
+// !addItem(newItem) - принимает новый товар newItem и добавляет его в массив товаров в свойстве
+//items объекта который вызывает этот метод.
+
+// !removeItem(itemToRemove) - принимает товар itemToRemove и удаляет его из массива товаров в свойстве
+//items объекта который вызывает этот метод.
+
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+
+//   getItems() {
+//     return this.items;
+//   }
+
+//   addItem(newItem) {
+//     return this.items.push(newItem);
+//   }
+
+//   removeItem(itemToRemove) {
+//     const index = this.items.findIndex(item => item.itemToRemove === item);
+//     this.items.splice(1, 1);
+//   }
+// }
+
+// const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem('Droid');
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem('Prolonger');
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
