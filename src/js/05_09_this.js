@@ -464,3 +464,27 @@
 // console.log(new Car({ brand: 'Audi', model: 'Q3', price: 36000 })); //{ brand: "Audi", model: "Q3", price: 36000 }
 // console.log(new Car({ brand: 'BMW', model: 'X5', price: 58900 })); //{ brand: "BMW", model: "X5", price: 58900 }
 // console.log(new Car({ brand: 'Nissan', model: 'Murano', price: 31700 })); //{ brand: "Nissan", model: "Murano", price: 31700 }
+
+/*---------------------------------------------------------------*/
+
+//Example 17
+//Добавь классу Car два метода.
+//getPrice() - возвращает значение свойства price из объекта который его будет вызывать.
+//changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice.
+
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+
+//   getPrice() {
+//     return this.price;
+//   }
+
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
+// }
+/*---------------------------------------------------------------*/
