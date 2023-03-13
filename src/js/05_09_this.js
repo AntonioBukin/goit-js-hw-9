@@ -404,3 +404,17 @@
 // console.log(ancestor.hasOwnProperty('heritage')); //true
 // console.log(parent.hasOwnProperty('heritage')); //false
 // console.log(child.hasOwnProperty('heritage')); //false
+/*---------------------------------------------------------------*/
+
+//Example 14
+//Используя ключевое слово class объяви класс Car с пустым телом.
+// Объявлен класс Car
+// Результат вызова new Car() это пустой объект
+
+// class Car {}
+
+// const auto = new Car();
+// console.log(auto);
+/*---------------------------------------------------------------*/
+
+//Example 15
