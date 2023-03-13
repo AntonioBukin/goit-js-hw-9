@@ -368,3 +368,39 @@
 // console.log(child.hasOwnProperty('age')); //true
 // console.log(child.hasOwnProperty('heritage')); //false
 // console.log(parent.isPrototypeOf(child)); //true
+/*---------------------------------------------------------------*/
+
+//Example 13
+//Измени код, построив цепочку прототипов так,
+// чтобы объект ancestor был прототипом для parent,
+// а тот в свою очередь был прототипом для child.
+
+// const ancestor = {
+//   name: 'Paul',
+//   age: 83,
+//   surname: 'Dawson',
+//   heritage: 'Irish',
+// };
+// // Change code below this line
+
+// const parent = Object.create(ancestor);
+// parent.name = 'Stacey';
+// parent.surname = 'Moore';
+// parent.age = 54;
+
+// const child = Object.create(parent);
+// child.name = 'Jason';
+// child.age = 27;
+
+// console.log(ancestor.isPrototypeOf(parent)); //true
+// console.log(parent.isPrototypeOf(child)); //true
+// console.log(ancestor.hasOwnProperty('surname')); //true
+// console.log(ancestor.surname); //"Dawson"
+// console.log(parent.surname); //"Moore"
+// console.log(parent.heritage); //"Irish"
+// console.log(child.age); //"Irish"
+// console.log(parent.hasOwnProperty('surname')); //true
+// console.log(child.hasOwnProperty('surname')); //false
+// console.log(ancestor.hasOwnProperty('heritage')); //true
+// console.log(parent.hasOwnProperty('heritage')); //false
+// console.log(child.hasOwnProperty('heritage')); //false
