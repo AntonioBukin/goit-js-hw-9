@@ -764,3 +764,31 @@
 
 // audi.price = 51000;
 // console.log(audi.price); // 49000
+/*---------------------------------------------------------------*/
+
+//Example 24
+//Добавь классу Car публичный статический метод checkPrice(price), принимающий цену автомобиля.
+//Метод должен сравнить значения параметра price и приватного статического свойства MAX_PRICE.
+
+//Если цена автомобиля превышает максимальную, метод должен вернуть строку "Error! Price exceeds the maximum".
+//В противном случае метод должен вернуть строку "Success! Price is within acceptable limits".
+
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   static checkPrice(price) {
+//     if (price > Car.#MAX_PRICE) {
+//       return 'Error! Price exceeds the maximum';
+//     }
+//     return 'Success! Price is within acceptable limits';
+//   }
+
+//   constructor({ price }) {
+//     this.price = price;
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
