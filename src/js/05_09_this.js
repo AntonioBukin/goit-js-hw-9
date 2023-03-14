@@ -644,3 +644,46 @@
 // console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 // storage.removeItem('Prolonger');
 // console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
+/*---------------------------------------------------------------*/
+
+//Example 21
+//Выполни рефакторинг класса StringBuilder, сделав свойство value приватным.
+
+// class StringBuilder {
+//   #value;
+//   // Change code below this line
+
+//   constructor(initialValue) {
+//     this.#value = initialValue;
+//   }
+
+//   getValue() {
+//     return this.#value;
+//   }
+
+//   padEnd(str) {
+//     this.#value += str;
+//   }
+
+//   padStart(str) {
+//     this.#value = str + this.#value;
+//   }
+
+//   padBoth(str) {
+//     this.padStart(str);
+//     this.padEnd(str);
+//   }
+// }
+
+// // Change code above this line
+// const builder = new StringBuilder('.');
+// console.log(builder.getValue()); // "."
+// builder.padStart('^');
+// console.log(builder.getValue()); // "^."
+// builder.padEnd('^');
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth('=');
+// console.log(builder.getValue()); // "=^.^="
+/*---------------------------------------------------------------*/
+
+//Example 22
