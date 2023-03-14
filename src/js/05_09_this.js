@@ -610,3 +610,37 @@
 // console.log(new Car({ brand: 'Audi', model: 'Q3', price: 36000 })); //{ model: "Q3", price: 36000 }
 // console.log(new Car({ brand: 'bmw', model: 'X5', price: 58900 })); //{ model: "X5", price: 58900 }
 // console.log(new Car({ brand: 'Nissan', model: 'Murano', price: 31700 })); //{ model: "Murano", price: 31700 }
+
+/*---------------------------------------------------------------*/
+
+//Example 21
+//Выполни рефакторинг класса Storage, сделав свойство items приватным.
+
+// class Storage {
+//   // Change code below this line
+//   #items;
+
+//   constructor(items) {
+//     this.#items = items;
+//   }
+
+//   getItems() {
+//     return this.#items;
+//   }
+
+//   addItem(newItem) {
+//     this.#items.push(newItem);
+//   }
+
+//   removeItem(itemToRemove) {
+//     this.#items = this.#items.filter(item => item !== itemToRemove);
+//   }
+// }
+
+// // Change code above this line
+// const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem('Droid');
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem('Prolonger');
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
