@@ -108,3 +108,13 @@ const makeProductCard = ({ name, description, price }) => {
 };
 
 console.log(makeProductCard(products[0]));
+
+//2) Зробити багато карток товарів
+
+const elements = products.map(makeProductCard);
+
+console.log(elements);
+
+const productsContainerEl = document.querySelector('.js-products');
+
+productsContainerEl.append(...elements);
