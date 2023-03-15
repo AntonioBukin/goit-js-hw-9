@@ -44,3 +44,67 @@
 
 // productRef.append(titleRef, descryRef, priceRef); // все зібрали в одне ціле
 // console.log(productRef);
+/*---------------------------------------------------------------*/
+
+//Example 2
+//Пишемо ф-цію для картки продукта
+
+//потрібно зробити за зразком такий шаблон
+//<article class='product'
+//<h2 class='product__name'>Назва</h2>
+//<p class='product__descry'>Опис товару</p>
+//<p product__price>Ціна: 2000 грн </p>
+//</article>
+
+const products = [
+  {
+    name: 'Манго',
+    price: 83,
+    online: false,
+    description: 'Suppose I tell you I like apples.',
+  },
+  {
+    name: 'Полі',
+    price: 59,
+    online: true,
+    description: 'Suppose I tell you I like apples.',
+  },
+  {
+    name: 'Аякс',
+    price: 37,
+    online: false,
+    description: 'Suppose I tell you I like apples.',
+  },
+  {
+    name: 'Ківі',
+    price: 94,
+    online: true,
+    description: 'Suppose I tell you I like apples.',
+  },
+];
+
+//1) Зробили карточку товара
+
+const makeProductCard = ({ name, description, price }) => {
+  //деструктурізація
+  const productRef = document.createElement('article');
+  productRef.classList.add('product');
+
+  const titleRef = document.createElement('h2');
+  titleRef.textContent = name;
+  titleRef.classList.add('product__name');
+
+  const descryRef = document.createElement('p');
+  descryRef.textContent = description;
+  descryRef.classList.add('product__descry');
+
+  const priceRef = document.createElement('p');
+  priceRef.textContent = `Ціна: ${price} грн`;
+  priceRef.classList.add('product__price');
+
+  productRef.append(titleRef, descryRef, priceRef);
+
+  return productRef;
+};
+
+console.log(makeProductCard(products[0]));
