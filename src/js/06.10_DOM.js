@@ -135,7 +135,7 @@
 </ul>;
 */
 
-const technologies = ['HTML', 'CSS', 'JS', 'React', 'Node'];
+//const technologies = ['HTML', 'CSS', 'JS', 'React', 'Node'];
 
 // const listRef = document.createElement('ul'); //створюємо вузел ul
 
@@ -177,4 +177,39 @@ const technologies = ['HTML', 'CSS', 'JS', 'React', 'Node'];
 // console.log(markup);
 
 // document.body.insertAdjacentHTML('beforeend', markup);
+/*---------------------------------------------------------------*/
+
+//Example 4
+//Створити кілька кнопок на основі масива з об'єктами використовувача createElement
+
+const colors = [
+  {
+    label: 'red',
+    color: '#FF0000',
+  },
+  {
+    label: 'green',
+    color: '#00FF00',
+  },
+  {
+    label: 'blue',
+    color: '#0000FF',
+  },
+  {
+    label: 'yellow',
+    color: '#FFFF00',
+  },
+];
+
+colors.forEach(({ label, color }) => {
+  const buttonRef = document.createElement('button');
+  buttonRef.textContent = label;
+  buttonRef.style.backgroundColor = color;
+  buttonRef.style.margin = '5px';
+  buttonRef.type = 'button';
+
+  //console.dir(buttonRef);
+
+  document.body.appendChild(buttonRef);
+});
 /*---------------------------------------------------------------*/
