@@ -159,13 +159,22 @@ const technologies = ['HTML', 'CSS', 'JS', 'React', 'Node'];
 
 //Вирішення задачі методом ======map======//
 
-const markup = `<ul>${technologies
-  .map(technology => `<li>${technology}</li>`)
-  .join('')}</ul>`;
+// const markup = `<ul>${technologies
+//   .map(technology => `<li>${technology}</li>`)
+//   .join('')}</ul>`;
 
-document.body.insertAdjacentHTML('beforeend', markup);
+// document.body.insertAdjacentHTML('beforeend', markup);
 
-console.log(markup);
+// console.log(markup);
 /*---------------------------------------------------------------*/
 
 //Вирішення задачі методом ======reduce======//
+
+// const markup = `<ul>${technologies.reduce(
+//   (acc, technology) => acc + `<li>${technology}`
+// )}</ul>`;
+
+// console.log(markup);
+
+// document.body.insertAdjacentHTML('beforeend', markup);
+/*---------------------------------------------------------------*/
