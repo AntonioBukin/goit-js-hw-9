@@ -137,21 +137,35 @@
 
 const technologies = ['HTML', 'CSS', 'JS', 'React', 'Node'];
 
-const listRef = document.createElement('ul'); //створюємо вузел ul
+// const listRef = document.createElement('ul'); //створюємо вузел ul
 
-for (const technology of technologies) {
-  //console.log('technology:', technology);
-  const liRef = document.createElement('li'); //створюємо li
-  //Варіант 1
-  //liRef.textContent = technology; // створили текстовый контент в середині элемента
-  //Варіант 2
-  const text = document.createTextNode(technology); //створюємо текстовий вузол
-  liRef.appendChild(text); //Додаємо текстовий вузов в DOM
+// for (const technology of technologies) {
+//   //console.log('technology:', technology);
+//   const liRef = document.createElement('li'); //створюємо li
+//   //Варіант 1
+//   //liRef.textContent = technology; // створили текстовый контент в середині элемента
+//   //Варіант 2
+//   const text = document.createTextNode(technology); //створюємо текстовий вузол
+//   liRef.appendChild(text); //Додаємо текстовий вузов в DOM
 
-  listRef.appendChild(liRef); //створений текстовий контент додаємо до **listRef** (ul)
-}
+//   listRef.appendChild(liRef); //створений текстовий контент додаємо до **listRef** (ul)
+// }
 
-//тепер нам потрібно контейнер наш ul з li додати на сторінку
-document.body.appendChild(listRef);
+// //тепер нам потрібно контейнер наш ul з li додати на сторінку
+// document.body.appendChild(listRef);
 
-console.dir(listRef);
+// console.dir(listRef);
+/*---------------------------------------------------------------*/
+
+//Вирішення задачі методом ======map======//
+
+const markup = `<ul>${technologies
+  .map(technology => `<li>${technology}</li>`)
+  .join('')}</ul>`;
+
+document.body.insertAdjacentHTML('beforeend', markup);
+
+console.log(markup);
+/*---------------------------------------------------------------*/
+
+//Вирішення задачі методом ======reduce======//
