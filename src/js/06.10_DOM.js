@@ -201,15 +201,21 @@ const colors = [
   },
 ];
 
+const fragment = document.createDocumentFragment(); //createDocumentFragment - це шматочок DOM, його ми використовуємо
+// щоб постінно не звертатисть до дому. Наша завдання мінімізувати звертання до домую
+
 colors.forEach(({ label, color }) => {
   const buttonRef = document.createElement('button');
   buttonRef.textContent = label;
   buttonRef.style.backgroundColor = color;
   buttonRef.style.margin = '5px';
   buttonRef.type = 'button';
+  buttonRef.className = 'button';
 
   //console.dir(buttonRef);
 
-  document.body.appendChild(buttonRef);
+  fragment.appendChild(buttonRef);
+
+  document.body.appendChild(fragment);
 });
 /*---------------------------------------------------------------*/
