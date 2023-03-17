@@ -272,6 +272,26 @@ const ingredients = [
   'Condiments',
 ];
 
+const list = document.querySelector('#ingredients');
+//console.log('Це list', list);
+const newList = [];
+
+for (const ingredient of ingredients) {
+  //console.log('Це ingredient:', ingredient);
+
+  const firstItem = document.createElement('li');
+  firstItem.textContent = ingredient;
+  firstItem.classList.add('firstItem');
+  //console.log('firstItem', firstItem);
+
+  newList.push(firstItem);
+  //console.log(newList);
+}
+
+list.append(...newList);
+
+console.log(newList);
+
 // Напиши скрипт, который для каждого элемента массива ingredients:
 // Создаст отдельный элемент <li>. Обзательно используй метод document.createElement().
 // Добавит название ингредиента как его текстовое содержимое.
