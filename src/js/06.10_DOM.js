@@ -182,40 +182,40 @@
 //Example 4
 //Створити кілька кнопок на основі масива з об'єктами використовувача createElement
 
-const colors = [
-  {
-    label: 'red',
-    color: '#FF0000',
-  },
-  {
-    label: 'green',
-    color: '#00FF00',
-  },
-  {
-    label: 'blue',
-    color: '#0000FF',
-  },
-  {
-    label: 'yellow',
-    color: '#FFFF00',
-  },
-];
+// const colors = [
+//   {
+//     label: 'red',
+//     color: '#FF0000',
+//   },
+//   {
+//     label: 'green',
+//     color: '#00FF00',
+//   },
+//   {
+//     label: 'blue',
+//     color: '#0000FF',
+//   },
+//   {
+//     label: 'yellow',
+//     color: '#FFFF00',
+//   },
+// ];
 
-const fragment = document.createDocumentFragment(); //createDocumentFragment - це шматочок DOM, його ми використовуємо
+//const fragment = document.createDocumentFragment(); //createDocumentFragment - це шматочок DOM, його ми використовуємо
 // щоб постінно не звертатисть до дому. Наша завдання мінімізувати звертання до домую
 
-colors.forEach(({ label, color }) => {
-  const buttonRef = document.createElement('button');
-  buttonRef.textContent = label;
-  buttonRef.style.backgroundColor = color;
-  buttonRef.style.margin = '5px';
-  buttonRef.type = 'button';
-  buttonRef.className = 'button';
+// colors.forEach(({ label, color }) => {
+//   const buttonRef = document.createElement('button');
+//   buttonRef.textContent = label;
+//   buttonRef.style.backgroundColor = color;
+//   buttonRef.style.margin = '5px';
+//   buttonRef.type = 'button';
+//   buttonRef.className = 'button';
 
-  //console.dir(buttonRef);
+//   //console.dir(buttonRef);
 
-  fragment.appendChild(buttonRef);
+//   fragment.appendChild(buttonRef);
 
-  document.body.appendChild(fragment);
-});
+//   document.body.appendChild(fragment);
+// });
 /*---------------------------------------------------------------*/
