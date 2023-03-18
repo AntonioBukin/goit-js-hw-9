@@ -269,14 +269,14 @@
 // Добавит элементу класс item.
 // После чего вставит все <li> за одну операцию в список ul#ingredients.
 
-const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
-];
+// const ingredients = [
+//   'Potatoes',
+//   'Mushrooms',
+//   'Garlic',
+//   'Tomatos',
+//   'Herbs',
+//   'Condiments',
+// ];
 
 // const list = document.querySelector('#ingredients');
 // //console.log('Це list', list);
@@ -301,19 +301,63 @@ const ingredients = [
 /*---------------------------------------------------------------*/
 //Variant - 2
 
-const listItem = document.querySelector('#ingredients');
-//console.log(listItem); //отрмиали доступ до *ul*
+// const listItem = document.querySelector('#ingredients');
+// //console.log(listItem); //отрмиали доступ до *ul*
 
-const ingredientsList = ingredients.map(ingredient => {
-  //console.log(ingredient); //перебрали весь масив
+// const ingredientsList = ingredients.map(ingredient => {
+//   //console.log(ingredient); //перебрали весь масив
 
-  const itemEl = document.createElement('li');
-  //console.log(itemRef); //створили *li*
+//   const itemEl = document.createElement('li');
+//   //console.log(itemRef); //створили *li*
 
-  itemEl.classList.add('ingredient'); // додали клас ingredient до списку елементів *li*
-  itemEl.textContent = ingredient; // додали текст контент в середену ел.
+//   itemEl.classList.add('ingredient'); // додали клас ingredient до списку елементів *li*
+//   itemEl.textContent = ingredient; // додали текст контент в середену ел.
 
-  return itemEl;
-});
+//   return itemEl;
+// });
 
-listItem.append(...ingredientsList);
+// listItem.append(...ingredientsList);
+/*---------------------------------------------------------------*/
+
+//Example 7
+//Напиши скрипт для создания галереи изображений по массиву данных.
+//В HTML есть список ul.gallery.
+//Используй массив объектов images для создания элементов <img>
+//вложенных в < li >.
+//Для создания разметки используй шаблонные строки и метод insertAdjacentHTML().
+//Все элементы галереи должны добавляться в DOM за одну операцию вставки.
+
+// const images = [
+//   {
+//     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'White and Black Long Fur Cat',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Group of Horses Running',
+//   },
+// ];
+
+// const galleryEl = document.querySelector('.gallery');
+// console.log(galleryEl); //отримали доступ до *ul*
+
+// const markup = images
+//   .map(
+//     image =>
+//       `<li><img class = 'picture' src=${image.url} width = '300' alt = "${image.alt}"></img></li>`
+//   )
+//   .join('');
+
+// galleryEl.insertAdjacentHTML('beforeend', markup);
+
+// const pictureEl = document.querySelector('.picture');
+// console.log(pictureEl);
+
+// galleryEl.style.display = 'flex';
+// galleryEl.style.gap = '10px';
+// galleryEl.style.justifyContent = 'center';
+// galleryEl.style.listStyle = 'none';
