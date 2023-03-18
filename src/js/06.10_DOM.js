@@ -263,6 +263,12 @@
 //<ul id="ingredients"></ul>
 //В JavaScript есть массив строк.
 
+// Напиши скрипт, который для каждого элемента массива ingredients:
+// Создаст отдельный элемент <li>. Обзательно используй метод document.createElement().
+// Добавит название ингредиента как его текстовое содержимое.
+// Добавит элементу класс item.
+// После чего вставит все <li> за одну операцию в список ul#ingredients.
+
 const ingredients = [
   'Potatoes',
   'Mushrooms',
@@ -272,28 +278,42 @@ const ingredients = [
   'Condiments',
 ];
 
-const list = document.querySelector('#ingredients');
-//console.log('Це list', list);
-const newList = [];
+// const list = document.querySelector('#ingredients');
+// //console.log('Це list', list);
+// const newList = [];
 
-for (const ingredient of ingredients) {
-  //console.log('Це ingredient:', ingredient);
+// for (const ingredient of ingredients) {
+//   //console.log('Це ingredient:', ingredient);
 
-  const firstItem = document.createElement('li');
-  firstItem.textContent = ingredient;
-  firstItem.classList.add('firstItem');
-  //console.log('firstItem', firstItem);
+//   const firstItem = document.createElement('li');
+//   firstItem.textContent = ingredient;
+//   firstItem.classList.add('firstItem');
+//   //console.log('firstItem', firstItem);
 
-  newList.push(firstItem);
-  //console.log(newList);
-}
+//   newList.push(firstItem);
+//   //console.log(newList);
+// }
 
-list.append(...newList);
+// list.append(...newList);
 
-console.log(newList);
+// console.log(newList);
 
-// Напиши скрипт, который для каждого элемента массива ingredients:
-// Создаст отдельный элемент <li>. Обзательно используй метод document.createElement().
-// Добавит название ингредиента как его текстовое содержимое.
-// Добавит элементу класс item.
-// После чего вставит все <li> за одну операцию в список ul#ingredients.
+/*---------------------------------------------------------------*/
+//Variant - 2
+
+const listItem = document.querySelector('#ingredients');
+//console.log(listItem); //отрмиали доступ до *ul*
+
+const ingredientsList = ingredients.map(ingredient => {
+  //console.log(ingredient); //перебрали весь масив
+
+  const itemEl = document.createElement('li');
+  //console.log(itemRef); //створили *li*
+
+  itemEl.classList.add('ingredient'); // додали клас ingredient до списку елементів *li*
+  itemEl.textContent = ingredient; // додали текст контент в середену ел.
+
+  return itemEl;
+});
+
+listItem.append(...ingredientsList);
