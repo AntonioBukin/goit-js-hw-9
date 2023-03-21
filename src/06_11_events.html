@@ -8,9 +8,21 @@
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <button type="button" class="js-target-btn">Цільова кнопка</button>
-    <button type="button" class="js-add-listener">Додати слухача</button>
-    <button type="button" class="js-remove-listener">Зняти слухача</button>
+    <button class="button" data-action="open-modal">Open modal</button>
+
+    <div class="backdrop js-backdrop">
+      <div class="modal">
+        <h2>Modal window</h2>
+        <p>
+          England play Italy on Thursday as they start qualification for Euro
+          2024, a tournament that will run from 14 June to 14 July, 2024 and be
+          held in Germany.
+        </p>
+        <button type="button" class="button" data-action="close-modal">
+          Close
+        </button>
+      </div>
+    </div>
 
     <script src="./js/06_11_events.js" type="module"></script>
   </body>
