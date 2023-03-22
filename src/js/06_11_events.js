@@ -96,3 +96,81 @@
 //event.currentTarget - елемент на якому вісить обробник (куди би я не клікнув, все одно буде виводити сам елемент наприклад <div>)
 
 /*---------------------------------------------------------------*/
+//Example 1
+
+// Створити калькулятор вартості продукту в залежності від ціни.
+//При роботі з подіями використовувати делагування.
+
+// При змінні данних в інпуті №1 чи №2 автоматично має перераховуватися загальна вартість
+
+// Завжди має відображатися валюта - гривня
+
+// Загальна сума відображається з копійками (2 знаки після коми)
+
+// В підписі другого інпута має бути кольорова підказка скільки кілограм вибрав користувач на другому інпуті.
+
+// Кольорова підказка має змінювати своє значення при перетягувані повзунка.
+
+// В інпуті №2 мін і мах поріг встановлюєте самостійно.
+
+// При завантаженні сторінки сприпт має автоматично розрахувати вартість на основі даних за замовчуванням які ви встановите в розмітці.
+
+//об'єкт у якому будемо зберігати значення полів з форми
+//та рахувати фінальну вартість
+const data = {
+  price: 0,
+  quantity: 0,
+  calcTotalPrice() {
+    return (this.price * this.quantity).toFixed(2);
+  },
+};
+
+//dom links
+const form = document.getElementById('form');
+//console.log(form);
+const total = document.getElementById('total');
+//console.log(total);
+const amount = document.getElementById('amount');
+
+//console.log(data);
+dataFill();
+update();
+
+//events
+form.addEventListener('input', handleFormChange);
+
+//functions
+function handleFormChange({ target }) {
+  //*деструктурували event міг бути запис const target = event.target
+
+  const { value } = target; //*деструктурували value
+
+  //*console.log('Це event.target', event.target); // Target - це наша input
+  //*console.log('event.currentTarget', event.currentTarget); // currentTarget - це наша уся форма
+  //console.log(value); //отримали значення, що в середені input (завдяки value)
+  // console.log(form.elements.price); //отримали доступ до ел. price
+  // console.log(form.elements.quantity); //отримали доступ до ел. quantity
+
+  if (target === form.elements.quantity) {
+    //якщо target елемент дорівнює form.elements.quantity, виводемо value
+    //console.log(value);
+    amount.textContent = value; //тепер у нас бігунок взаємодіє з кількістю (кг)
+  }
+
+  target.setAttribute('value', value); //тепер у нас value в коді змінюється, водночас з калькулятором
+  dataFill();
+  update();
+}
+
+// наповнює об'єкт data значеннями з артибутів value e елементів форм
+function dataFill() {
+  //заповнили об'єкт базовими данними з html коду
+  data.price = form.elements.price.getAttribute('value');
+  data.quantity = form.elements.quantity.getAttribute('value');
+}
+
+// оновлює інтерфейс калькулятора(показує вартість та оновлює amount)
+function update() {
+  total.textContent = data.calcTotalPrice() + 'грн';
+  amount.textContent = data.quantity;
+}
