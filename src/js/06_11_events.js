@@ -78,8 +78,16 @@
 
 // Що буде виведено у консоль при натисканні на елемент <button>?
 
-const elem = document.querySelector('div');
-elem.addEventListener('click', event => {
-  console.log(event.currentTarget); //елемент div буде виведено у консоль
-});
+// const elem = document.querySelector('div');
+// elem.addEventListener('click', event => {
+//   console.log(event.currentTarget); //елемент *div* буде виведено у консоль
+// });
+/*---------------------------------------------------------------*/
+
+// Що буде виведено у консоль при натисканні на елемент <button>?
+
+// const elem = document.querySelector('div');
+// elem.addEventListener('click', event => {
+//   console.log(event.target); //елемент *span* буде виведено у консоль
+// });
 /*---------------------------------------------------------------*/
