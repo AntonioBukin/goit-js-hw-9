@@ -4,6 +4,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chatty events</title>
     <link rel="stylesheet" href="css/common.css" />
+    <style>
+      .feed {
+        list-style: none;
+      }
+
+      .feed li :not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      .feed img {
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all 500ms linear 500ms;
+        width: 640px;
+        height: 480px;
+        object-fit: cover;
+      }
+
+      .feed img.appear {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
     <p><a href="index.html">Go back</a></p>
@@ -16,12 +39,71 @@
     <input type="text" class="js-input" />
     <p class="js-output">Кількість викликів OnInputChange: 0</p> -->
 
-    <label>
+    <!-- <label>
       Що шукаємо?
       <input type="text" id="filter" />
     </label>
 
-    <ul class="js-list"></ul>
+    <ul class="js-list"></ul> -->
+
+    <ul class="feed">
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          class="lazyload"
+          data-src="./img/rastamogka-avto-iz-chehii.jpg"
+          alt="auto1"
+          width="640"
+          height="480"
+        />
+        <p>
+          It was only a matter of time - but Harry Kane has now scored more
+          England goals than any player in history.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          class="lazyload"
+          data-src="./img/dfdd9b9d-a40ea8402c46c2f18c8bbac60823d422.jpg"
+          alt="auto2"
+          width="640"
+          height="480"
+        />
+        <p>
+          It was only a matter of time - but Harry Kane has now scored more
+          England goals than any player in history.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          class="lazyload"
+          data-src="./img/ford-focus-1-450x281.jpg"
+          alt="auto3"
+          width="640"
+          height="480"
+        />
+        <p>
+          It was only a matter of time - but Harry Kane has now scored more
+          England goals than any player in history.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          class="lazyload"
+          data-src="./img/HG02.jpg"
+          alt="auto4"
+          width="640"
+          height="480"
+        />
+        <p>
+          It was only a matter of time - but Harry Kane has now scored more
+          England goals than any player in history.
+        </p>
+      </li>
+    </ul>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
     <script src="./js/06_12_chatty_eve.js" type="module"></script>
