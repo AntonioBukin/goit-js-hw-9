@@ -122,3 +122,35 @@
 // Модальне вікно має закриватися при кліку на напівпрозорий оверлей, та на іконку хрестика всередині модалки
 
 //2. Додати в модалку логіку закриття при натисканні на кнопку Escape
+
+refs = {
+  overlay: document.getElementById('overlay'),
+  modalWindow: document.getElementById('modalWindow'),
+  closeBtn: document.getElementById('closeBtn'),
+  openBtn: document.getElementById('openBtn'),
+};
+
+const classes = {
+  openModal: 'open-modal',
+};
+
+//1 Повісити обробник подій який буде відкривати вікно
+refs.openBtn.addEventListener('click', handleModal);
+refs.closeBtn.addEventListener('click', handleModal);
+refs.overlay.addEventListener('click', handleModal);
+document.addEventListener('keydown', handleModalClose);
+
+function handleModal() {
+  //console.log(event); //ф-ція спрацьовує, коли ми натискаємо на btn
+  document.body.classList.toggle(classes.openModal); //при натисканні на btn, відкривається модалка, кнопка close закриває +
+  //при натисканні на порожне поле, теж спрацьовує закривання модалки
+}
+
+function handleModalClose({ code }) {
+  console.log(code); //витягнули назву клавіши на клавіатурі, на яку нажимають
+
+  if (code === 'Escape') {
+    //console.log('Yes'); //при натисканні на клавішу Escape, з'являється надпис Yes
+    document.body.classList.remove(classes.openModal); //завдяки цієї опрації при натисканні на Escape модалка закривається.
+  }
+}
