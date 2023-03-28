@@ -4,8 +4,10 @@
   "description": "",
   "homepage": "https://AntonioBukin.github.io/goit-js-hw-9",
   "scripts": {
+    "dev": "parcel src/index.html",
+    "buildParcel": "parcel build src/index.html",
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-9/"
+    "build": "babel src -d lib"
   },
   "repository": {
     "type": "git",
@@ -18,11 +20,12 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
+    "joi": "^17.9.1",
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
-    "parcel": "^2.6.0",
+    "parcel": "^2.8.3",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
   },
