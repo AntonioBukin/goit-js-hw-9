@@ -20,6 +20,7 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
+    "bootstrap.native": "^5.0.5",
     "joi": "^17.9.1",
     "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0"
